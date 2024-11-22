@@ -1,0 +1,18 @@
+.box{
+    box-shadow: 2px 3px 30px 5px rgb(247, 0, 255);
+}
+.box-shadow-blue{
+    box-shadow: 2px 3px 10px 5px rgb(25, 0, 255);
+}
+.box-shadow-red{
+    box-shadow: 2px 3px 30px 5px rgb(255, 0, 0);
+}
+.box-shadow-green{
+    box-shadow: 2px 3px 30px 5px rgb(94, 255, 0);
+}
+.box-shadow-yellow{
+    box-shadow: 2px 3px 30px 5px rgb(255, 251, 0);
+}
+.text-shadow{
+    text-shadow: 3px 3px 5px blue;
+}
