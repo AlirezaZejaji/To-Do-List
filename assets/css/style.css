@@ -16,3 +16,13 @@
 .text-shadow{
     text-shadow: 3px 3px 5px blue;
 }
+
+.advertise{
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+}
+.img{
+    width: 150px;
+    height: 100px;
+}
