@@ -5,7 +5,6 @@ let add_btn = document.querySelector(".add_btn")
 let inp_search = document.querySelector(".inp_search")
 let search_btn = document.querySelector(".search_btn")
 let list = document.querySelector(".list")
-let advertise = document.querySelector(".advertise")
 
 // add in list
 add_btn.addEventListener("click" , function(){
@@ -71,11 +70,4 @@ function done(done_btn){
     my_span.classList.add("text-decoration-line-through")
 
     localStorage.setItem("list_items" , list.innerHTML)
-}
-// remove advertise
-function remove_advertise(close_btn){
-    advertise = close_btn.closest(".advertise")
-    if(confirm("close advertise?")){
-        advertise.remove()
-    }
 }
