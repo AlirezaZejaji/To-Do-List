@@ -1,5 +1,5 @@
 // start to do list
-// select list
+// select item
 let inp_add = document.querySelector(".inp_add")
 let add_btn = document.querySelector(".add_btn")
 let inp_search = document.querySelector(".inp_search")
@@ -10,22 +10,34 @@ let list = document.querySelector(".list")
 add_btn.addEventListener("click" , function(){
     let inp_add_value = inp_add.value.toLowerCase()
     if(inp_add_value.trim() != ""){
+        // show list
+        list.classList.remove("d-none")
+
+        // create item
         let li = document.createElement("li")
-        li.className = "alert alert-light d-flex justify-content-between mt-3"
+        li.className = "alert alert-light d-flex justify-content-between mt-2 mx-1"
         li.innerHTML =`
-        <span>${inp_add_value}</span>
+        <span class="w-75">${inp_add_value}</span>
         <div>
-            <button class="btn btn-success btn-sm" onclick="done(this)">done</button>
-            <button class="btn btn-warning btn-sm" onclick="doing(this)">doing</button>
+            <button class="btn btn-success fw-bold btn-sm" onclick="done(this)">done</button>
+            <button class="btn btn-warning fw-bold btn-sm" onclick="doing(this)">doing</button>
             <button class="btn-close" onclick="remove(this)"></button>
         </div>
         `
+
+        // add item in list
         list.append(li)
         inp_add.value = ""
     }
+    // add item in localStorage
     localStorage.setItem("list_items" , list.innerHTML)
 })
 list.innerHTML = localStorage.getItem("list_items")
+
+// hide list
+if(list.innerHTML.trim() == "" ){
+    list.classList.add("d-none")
+}
 
 // search in list
 search_btn.addEventListener("click" , function(){
@@ -49,6 +61,11 @@ function remove(close_btn){
         my_alret.remove()
 
         localStorage.setItem("list_items" , list.innerHTML)
+    }
+
+    // hide list
+    if(list.innerHTML.trim() == "" ){
+        list.classList.add("d-none")
     }
 }
 // doing item
