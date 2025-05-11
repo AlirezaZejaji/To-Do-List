@@ -9,28 +9,44 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- jquery -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
     <title>Zejaji</title>
 </head>
-<body class="bg-dark">
-    <!-- strat to do list  -->
-        <div class="p-4 m-4 w-50 mx-auto box">
-            <!-- add btn and search btn -->
-                <div class="d-flex mb-2">
-                    <input type="text" class="inp_add form-control w-75" placeholder="Add item in List">
-                    <button class="add_btn box-shadow-blue w-25 btn btn-dark ms-2">Add</button>
-                </div>
-                <div class="d-flex">
-                    <input type="text" class="inp_search form-control w-75" placeholder="Search in List">
-                    <button class="search_btn box-shadow-blue w-25 btn btn-dark ms-2">Search</button>
-                </div>
-            <!-- show list -->
-                <h2 class="text-center fw-bold py-3 text-white text-shadow">To Do List</h2>
-                <div style="height: 55vh;">
-                    <ul class="list list-unstyled overflow-auto box-shadow-red" style="height: 55vh;">
+<body>
+    <!-- start to do list -->
+    <div class="container pt-3">
+        <div class="box bg-secondary bg-opacity-10 rounded p-4 mx-auto" style="max-width: 600px;">
 
-                    </ul>
+            <!-- Add input and button -->
+            <div class="row mb-3">
+                <div class="col-12 col-md-8 mb-2 mb-md-0">
+                    <input type="text" class="form-control inp_add w-100" placeholder="Add item in List"/>
                 </div>
+                <div class="col-12 col-md-4">
+                    <button class="add_btn btn w-100" title="Add item">Add</button>
+                </div>
+            </div>
+
+            <!-- Search input and button -->
+            <div class="row mb-3">
+                <div class="col-12 col-md-8 mb-2 mb-md-0">
+                    <input type="text" class="form-control inp_search w-100" placeholder="Search in List"/>
+                </div>
+                <div class="col-12 col-md-4">
+                    <i class="bi bi-search search_btn btn fs-5 w-100" title="Search item"></i>
+                </div>
+            </div>
+
+            <!-- Show list -->
+            <h2 class="text-center fw-bold py-3 text-white">To Do List</h2>
+            <div style="height: 55vh;">
+                <ul class="list list-unstyled overflow-auto list-unstyled p-0" style="height: 55vh;">
+
+                </ul>
+            </div>
         </div>
+    </div>
     <!-- end to do list -->
 
     <!-- js -->
