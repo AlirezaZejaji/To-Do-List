@@ -30,6 +30,7 @@ function add_item(){
             </div>
             <div class="col-12 col-sm-5 d-flex justify-content-end gap-2 flex-wrap">
                 <i class="bi bi-check-square btn btn-outline-success fs-4 p-0 px-2" title="Done" onclick="done(this)"></i>
+                <i class="bi bi-pencil-square btn btn-outline-primary fs-4 p-0 px-2" title="Edit" onclick="edit(this)"></i>
                 <i class="bi bi-arrow-repeat btn btn-outline-warning fs-4 p-0 px-2" title="Doing" onclick="doing(this)"></i>
                 <i class="bi bi-trash btn btn-outline-danger fs-4 p-0 px-2" title="Delete" onclick="remove(this)"></i>
             </div>
@@ -112,4 +113,18 @@ function done(done_btn){
     my_span.classList.add("text-decoration-line-through")
 
     localStorage.setItem("list_items" , list.innerHTML)
+}
+
+// edit item
+function edit(edit_btn){
+    let my_alret_text   = edit_btn.closest(".row")
+    let my_alret_value  = my_alret_text.querySelector(".alert_text")
+
+    swal("Write something here:", {
+        content: "input",
+    })
+    .then((value) => {
+        my_alret_value.textContent = value;
+        localStorage.setItem("list_items" , list.innerHTML)
+    });
 }
