@@ -1,18 +1,35 @@
-.box{
-    box-shadow: 2px 3px 30px 5px rgb(247, 0, 255);
+body{
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
 }
-.box-shadow-blue{
-    box-shadow: 2px 3px 10px 5px rgb(25, 0, 255);
+.box {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.box-shadow-red{
-    box-shadow: 2px 3px 30px 5px rgb(255, 0, 0);
+.inp_add, .inp_search {
+    border-radius: 50px;
+    padding: 10px;
 }
-.box-shadow-green{
-    box-shadow: 2px 3px 30px 5px rgb(94, 255, 0);
+.add_btn, .search_btn {
+    background: linear-gradient(145deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    transition: all 0.3s;
 }
-.box-shadow-yellow{
-    box-shadow: 2px 3px 30px 5px rgb(255, 251, 0);
+.add_btn:hover, .search_btn:hover {
+    background: linear-gradient(145deg, #0072ff, #00c6ff);
 }
-.text-shadow{
-    text-shadow: 4px 5px 5px rgb(255, 102, 0);
+.list li {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
