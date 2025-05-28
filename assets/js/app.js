@@ -17,6 +17,7 @@ inp_add.addEventListener("keydown" , function(e){
         add_item()
     }
 })
+let n = 0;
 function add_item(){
     let inp_add_value = inp_add.value.toLowerCase()
     if(inp_add_value.trim() != ""){
@@ -26,13 +27,15 @@ function add_item(){
         // create item
         let li = document.createElement("li")
         li.className = "alert alert-light mt-2 mx-1"
+        li.setAttribute("onmouseenter" , `fadeIn(document.querySelector('.i_${n}'))`)
+        li.setAttribute("onmouseleave" , `fadeOut(document.querySelector('.i_${n}'))`)
 
         li.innerHTML = `
         <div class="row align-items-center">
             <div class="text col-12 col-sm-7 text-break mb-2 mb-sm-0">
                 <span class="alert_text">${inp_add_value}</span>
             </div>
-            <div class="col-12 col-sm-5 d-flex justify-content-end gap-2 flex-wrap">
+            <div class="col-12 col-sm-5 d-flex justify-content-end gap-2 flex-wrap i_${n}" style="opacity: 0;">
                 <i class="bi bi-check-square btn btn-outline-success fs-4 p-0 px-2" title="Done" onclick="done(this)"></i>
                 <i class="bi bi-pencil-square btn btn-outline-primary fs-4 p-0 px-2" title="Edit" onclick="edit(this)"></i>
                 <i class="bi bi-arrow-repeat btn btn-outline-warning fs-4 p-0 px-2" title="Doing" onclick="doing(this)"></i>
@@ -44,6 +47,7 @@ function add_item(){
         // add item in list
         list.append(li)
         inp_add.value = ""
+        n++
     }
     // add item in localStorage
     localStorage.setItem("list_items" , list.innerHTML)
@@ -166,4 +170,33 @@ function edit(edit_btn){
         my_alret_value.textContent = value;
         localStorage.setItem("list_items" , list.innerHTML)
     });
+}
+
+// fade in
+function fadeIn(el){
+    let op = 0
+
+    el.style.display = "block"
+
+    let timer = setInterval(function(){
+        if(op >= 1){
+            clearInterval(timer)
+        }
+        el.style.opacity = op
+        op += 0.05
+    } , 20)
+}
+
+// fade out
+function fadeOut(el){
+    let op = 1;
+
+    let timer = setInterval(function(){
+        if(op <= 0){
+            clearInterval(timer)
+            el.style.display = 'none';
+        }
+        el.style.opacity = op
+        op -= 0.05
+    } , 20)
 }
