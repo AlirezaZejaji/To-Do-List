@@ -5,6 +5,10 @@ let add_btn = document.querySelector(".add_btn")
 let inp_search = document.querySelector(".inp_search")
 let search_btn = document.querySelector(".search_btn")
 let list = document.querySelector(".list")
+let dir = document.querySelector(".dir")
+let dir_r = document.querySelector(".dir_r")
+let dir_l = document.querySelector(".dir_l")
+let body = document.querySelector("body")
 
 // add in list
 add_btn.addEventListener("click" , add_item)
@@ -66,6 +70,41 @@ function search_item(){
     })
 }
 
+// direction body
+// direction right
+dir_r.addEventListener("click" , function(){
+    dir_l.classList.remove("d-none")
+    dir_r.classList.add("d-none")
+
+    body.classList.add("rtl")
+    body.classList.remove("ltr")
+
+    direction()
+})
+
+// direction left
+dir_l.addEventListener("click" , function(){
+    dir_r.classList.remove("d-none")
+    dir_l.classList.add("d-none")
+
+    body.classList.remove("rtl")
+    body.classList.add("ltr")
+
+    direction()
+})
+
+// set direction
+function direction(){
+    if(body.classList == "rtl"){
+        body.setAttribute("dir" , "rtl")
+
+        dir.style.left = "57%"
+    }else if(body.classList == "ltr"){
+        body.setAttribute("dir" , "ltr")
+
+        dir.style.left = "30%"
+    }
+}
 
 // remove item
 function remove(close_btn){
