@@ -35,7 +35,7 @@ function add_item(){
             <div class="text col-12 col-sm-7 text-break mb-2 mb-sm-0">
                 <span class="alert_text">${inp_add_value}</span>
             </div>
-            <div class="col-12 col-sm-5 d-flex justify-content-end gap-2 flex-wrap i_${n}" style="opacity: 0;">
+            <div class="col-12 col-sm-5 d-flex justify-content-end gap-2 flex-wrap i_${n}" style="opacity:0.5;">
                 <i class="bi bi-check-square btn btn-outline-success fs-4 p-0 px-2" title="Done" onclick="done(this)"></i>
                 <i class="bi bi-pencil-square btn btn-outline-primary fs-4 p-0 px-2" title="Edit" onclick="edit(this)"></i>
                 <i class="bi bi-arrow-repeat btn btn-outline-warning fs-4 p-0 px-2" title="Doing" onclick="doing(this)"></i>
@@ -143,6 +143,7 @@ function doing(doing_btn){
     my_alret.classList.add("alert-warning")
     let my_span = my_alret.querySelector("span")
     my_span.classList.remove("text-decoration-line-through")
+    my_span.classList.add("fw-bold")
 
     localStorage.setItem("list_items" , list.innerHTML)
 }
@@ -154,6 +155,7 @@ function done(done_btn){
     my_alret.classList.add("alert-success")
     let my_span = my_alret.querySelector("span")
     my_span.classList.add("text-decoration-line-through")
+    my_span.classList.remove("fw-bold")
 
     localStorage.setItem("list_items" , list.innerHTML)
 }
@@ -192,7 +194,7 @@ function fadeOut(el){
     let op = 1;
 
     let timer = setInterval(function(){
-        if(op <= 0){
+        if(op <= 0.5){
             clearInterval(timer)
             el.style.display = 'none';
         }
