@@ -1,3 +1,10 @@
+/* start font */
+.playpen-sans-hebrew{
+    font-family: "Playpen Sans Hebrew", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+/* end font */
 body{
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
 }
